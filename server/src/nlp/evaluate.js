@@ -14,8 +14,19 @@ function evaluateSentiment(data = dataset) {
   const confusion = Object.fromEntries(LABELS.map((a) => [a, Object.fromEntries(LABELS.map((b) => [b, 0]))]));
   const errors = [];
   let correct = 0;
-  for (const { text, label } of data) {
-    const pred = classify(text);
+  for (const item of data) {
+    const text = item.text;
+    const label = String(item.label || '').trim().toLowerCase();
+    const pred = String(classify(text)).trim().toLowerCase();
+
+    if (!LABELS.includes(label)) {
+        throw new Error(`Invalid actual sentiment label: ${label}`);
+    }
+
+    if (!LABELS.includes(pred)) {
+        throw new Error(`Invalid predicted sentiment label: ${pred}`);
+    }
+
     confusion[label][pred] += 1;
     if (pred === label) correct += 1;
     else errors.push({ text, expected: label, predicted: pred });
