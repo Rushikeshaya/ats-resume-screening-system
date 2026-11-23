@@ -37,8 +37,6 @@ export default function App() {
           <div className="badges">
             <span className={`badge ${health.status === 'ok' ? 'ok' : 'bad'}`}>API {health.status}</span>
             {health.storage && <span className="badge ok">Storage {health.storage}</span>}
-            {health.llm && <span className="badge">LLM {health.llm}</span>}
-            {health.aws && <span className="badge">AWS {health.aws}</span>}
           </div>
         )}
       </header>
