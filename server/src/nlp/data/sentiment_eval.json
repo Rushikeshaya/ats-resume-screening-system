@@ -30,5 +30,39 @@
   { "text": "Responsible for writing documentation and maintaining the repository.", "label": "neutral" },
   { "text": "The interview is scheduled for Monday at ten.", "label": "neutral" },
   { "text": "Submitted the report to the department office.", "label": "neutral" },
-  { "text": "The dataset contains 500 rows and 12 columns.", "label": "neutral" }
+  { "text": "The dataset contains 500 rows and 12 columns.", "label": "neutral" },
+  [
+  {
+    "text": "The candidate is not only skilled but also reliable.",
+    "label": "positive"
+  },
+  {
+    "text": "The project was not bad, but it was not particularly impressive.",
+    "label": "neutral"
+  },
+  {
+    "text": "The candidate failed to mention any major problems.",
+    "label": "neutral"
+  },
+  {
+    "text": "The system is slow, but its performance improved significantly.",
+    "label": "neutral"
+  },
+  {
+    "text": "The candidate has no experience with machine learning.",
+    "label": "negative"
+  },
+  {
+    "text": "The application is not terrible, although it is unreliable.",
+    "label": "negative"
+  },
+  {
+    "text": "Successfully completed the internship without receiving any award.",
+    "label": "neutral"
+  },
+  {
+    "text": "The candidate delivered the project late despite excellent planning.",
+    "label": "neutral"
+  }
+]
 ]
