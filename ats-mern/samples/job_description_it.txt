@@ -1,0 +1,7 @@
+Information Technology Associate
+
+We are hiring an IT associate to support our software and infrastructure teams. You will maintain systems and networks, troubleshoot technical issues, and help develop and test internal applications.
+
+Required skills: SQL, Python, Java, Linux, networking, Git, cloud (AWS or Azure), strong communication and problem solving.
+Preferred: JavaScript, Docker, project management, experience with databases and Agile teams.
+Education: Bachelor's degree in Computer Science, Information Technology or a related field.

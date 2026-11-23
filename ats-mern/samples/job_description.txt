@@ -1,0 +1,15 @@
+We are looking for a Python Developer Intern.
+
+Required skills:
+Python, SQL, Pandas, NumPy, Git, problem solving.
+
+Responsibilities:
+Develop Python applications, work with data, write clean code,
+debug issues, and collaborate with the development team.
+
+Preferred:
+Machine Learning, Scikit-learn, Flask, communication skills.
+
+Education:
+Bachelor's degree in Computer Science, Information Technology,
+or Engineering.

@@ -1,0 +1,148 @@
+/* Theme: light aurora workspace, frosted glass panels, and a pure white resume sheet.
+   Text is always charcoal (#1e293b) on light surfaces. */
+:root {
+  --bg: #ffffff;
+  --text: #1e293b;       /* charcoal */
+  --muted: #475569;      /* secondary text, still >= 7:1 contrast on white */
+  --line: #cbd5e1;       /* borders and dividers */
+  --soft: #f1f5f9;       /* very light grey for hover / selected rows / tiles */
+  --ok: #166534;
+  --bad: #b91c1c;
+
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app { max-width: 1100px; margin: 0 auto; padding: 24px 16px 40px; }
+.top { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; flex-wrap: wrap; }
+h1 { margin: 0 0 4px; font-size: 1.7rem; color: var(--text); }
+h2 { margin: 0 0 12px; font-size: 1.15rem; }
+h3, h4 { margin: 16px 0 6px; }
+.muted { color: var(--muted); }
+.small { font-size: 0.85rem; }
+
+/* ---------- panels ---------- */
+.card {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.badges { display: flex; gap: 6px; flex-wrap: wrap; }
+.badge { font-size: 0.75rem; padding: 3px 10px; border-radius: 999px; background: var(--bg); border: 1px solid var(--line); color: var(--text); }
+.badge.ok { color: var(--ok); border-color: var(--ok); }
+.badge.bad { color: var(--bad); border-color: var(--bad); }
+
+/* ---------- tabs ---------- */
+.tabs { display: flex; gap: 2px; margin: 18px 0 14px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+.tabs.sub { margin: 2px 0 14px; }
+.tabs button {
+  background: none; border: none; border-bottom: 3px solid transparent; border-radius: 0;
+  padding: 8px 14px; cursor: pointer; font-size: 0.95rem; color: var(--muted);
+}
+.tabs button:hover { color: var(--text); background: var(--soft); }
+.tabs button.active { color: var(--text); font-weight: 600; border-bottom-color: var(--text); }
+
+.stack { display: flex; flex-direction: column; gap: 16px; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 800px) { .grid2 { grid-template-columns: 1fr; } }
+.row { display: flex; justify-content: space-between; align-items: center; }
+
+/* ---------- form controls ---------- */
+label { display: block; margin: 10px 0; font-size: 0.9rem; font-weight: 600; }
+label.inline { display: flex; gap: 10px; align-items: center; }
+input, textarea, select {
+  display: block; width: 100%; margin-top: 4px; padding: 9px 11px; font: inherit; font-weight: 400;
+  color: var(--text); background: var(--bg); border: 1px solid var(--line); border-radius: 6px;
+}
+input::placeholder, textarea::placeholder { color: #64748b; }
+input:focus, textarea:focus, select:focus { outline: 2px solid var(--text); outline-offset: 1px; }
+label.inline select { width: auto; margin: 0; }
+input[type='file'] { padding: 7px; }
+input[type='file']::file-selector-button {
+  margin-right: 10px; padding: 6px 12px; border: 1px solid var(--line); border-radius: 6px;
+  background: var(--soft); color: var(--text); cursor: pointer;
+}
+
+button, a.button {
+  background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 7px 14px;
+  cursor: pointer; font: inherit; font-size: 0.9rem; color: var(--text); text-decoration: none;
+}
+button:hover, a.button:hover { background: var(--soft); }
+button.primary { background: var(--text); border-color: var(--text); color: #ffffff; font-weight: 600; padding: 10px 22px; margin-top: 8px; }
+button.primary:hover { background: #0f172a; }
+button.danger { color: var(--bad); border-color: var(--bad); }
+button:disabled { opacity: 0.6; cursor: wait; }
+.actions { display: flex; gap: 6px; }
+
+/* ---------- tables ---------- */
+table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+th, td { text-align: left; padding: 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+thead th { color: var(--muted); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; }
+tbody th { font-weight: 600; width: 36%; }
+table.clickable tbody tr { cursor: pointer; }
+table.clickable tbody tr:hover { background: var(--soft); }
+table.clickable tbody tr.selected { background: var(--soft); box-shadow: inset 3px 0 0 var(--text); }
+
+/* ---------- bars and metric tiles ---------- */
+.bar { height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden; margin-bottom: 3px; }
+.bar > div { height: 100%; background: var(--text); border-radius: 4px; }
+
+.metrics { display: flex; gap: 12px; flex-wrap: wrap; margin: 10px 0; }
+.metrics > div { background: var(--soft); border: 1px solid var(--line); border-radius: 8px; padding: 10px 16px; min-width: 120px; }
+.metrics strong { display: block; font-size: 1.3rem; }
+.metrics span { font-size: 0.8rem; color: var(--muted); }
+
+.error { color: var(--bad); }
+.topics { padding-left: 18px; margin: 0; }
+pre.text { white-space: pre-wrap; background: var(--soft); border: 1px solid var(--line); padding: 12px; border-radius: 6px; max-height: 420px; overflow: auto; font-size: 0.8rem; color: var(--text); }
+footer { margin-top: 28px; text-align: center; }
+
+/* 1. Aurora violet and cyan workspace background */
+.app-workspace {
+  background-color: #f5f3ff;
+  background-image:
+    radial-gradient(at 15% 15%, rgba(139, 92, 246, 0.16) 0px, transparent 50%),
+    radial-gradient(at 85% 20%, rgba(56, 189, 248, 0.14) 0px, transparent 50%),
+    radial-gradient(at 50% 90%, rgba(168, 85, 247, 0.12) 0px, transparent 55%);
+  min-height: 100vh;
+}
+
+/* 2. Frosted glass panels (cards, score panels) */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 8px 32px rgba(91, 33, 182, 0.06);
+  border-radius: 16px;
+}
+
+/* 3. Pure white resume preview sheet */
+.ats-resume-sheet {
+  background: #ffffff;
+  color: #1e293b;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+pre.text.ats-resume-sheet { background: #ffffff; border: 1px solid var(--line); padding: 20px; border-radius: 4px; }
+
+/* Browsers without backdrop-filter: make the glass nearly opaque so text stays readable. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass-panel { background: rgba(255, 255, 255, 0.95); }
+}
+
+@media print {
+  .app-workspace { background: #ffffff; }
+  .glass-panel { background: #ffffff; box-shadow: none; backdrop-filter: none; }
+  .tabs, button, a.button { display: none; }
+  .card { border: none; padding: 0; }
+}

@@ -1,0 +1,26 @@
+Ananya Deshmukh
+ananya.deshmukh@example.com | +91 98765 43210 | github.com/ananya-d | linkedin.com/in/ananya-deshmukh
+
+Summary
+Final-year AI and ML student passionate about building reliable data applications in Python.
+
+Education
+B.Tech in Artificial Intelligence and Machine Learning, CGPA: 8.7
+Savitribai Phule Pune University, 2021 - 2025
+
+Skills
+Python, SQL, Pandas, NumPy, Scikit-learn, Flask, Git, GitHub, Machine Learning, Problem Solving, Communication
+
+Experience
+Data Science Intern, Acme Analytics
+Jun 2024 - Aug 2024
+Built a churn prediction model with Scikit-learn and improved recall by 14%.
+Cleaned and analysed 200k rows with Pandas and NumPy and wrote SQL reports for the sales team.
+Collaborated with a team of four developers using Git and pull requests.
+
+Projects
+Sales Dashboard: Developed a Flask web app that summarises monthly revenue from MySQL data.
+Resume Screener: Implemented TF-IDF matching in Python and delivered ranked candidate lists.
+
+Achievements
+Won first prize in the college hackathon for an innovative data tool.
