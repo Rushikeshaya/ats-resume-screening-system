@@ -31,7 +31,7 @@ export default function App() {
       <header className="top">
         <div>
           <h1>ATS Resume Screening</h1>
-          <p className="muted">MERN + NLP: TF-IDF matching, information extraction, sentiment, topic modelling, multilingual and LLM feedback</p>
+          <p className="muted">MERN + NLP: TF-IDF matching, information extraction, sentiment, topic modelling and LLM feedback</p>
         </div>
         {health && (
           <div className="badges">

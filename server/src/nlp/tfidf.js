@@ -1,6 +1,5 @@
 const { STOP } = require('./stopwords');
 
-/** Build unigrams + bigrams from a token list (stop-words removed first, like scikit-learn). */
 function buildNgrams(tokens, [minN, maxN] = [1, 2]) {
   const out = [];
   for (let n = minN; n <= maxN; n++) {
@@ -9,13 +8,7 @@ function buildNgrams(tokens, [minN, maxN] = [1, 2]) {
   return out;
 }
 
-/**
- * CO1 - vectorization: TF-IDF written from scratch.
- *   tf   = 1 + ln(count)                 (sublinear)
- *   idf  = ln((1 + N) / (1 + df)) + 1    (smooth)
- *   vec  = tf * idf, then L2-normalised
- * Because vectors are unit length, cosine similarity is just a dot product.
- */
+
 class TfidfVectorizer {
   constructor({ ngramRange = [1, 2], maxFeatures = 20000, sublinear = true } = {}) {
     this.ngramRange = ngramRange;
